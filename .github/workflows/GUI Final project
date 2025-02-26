@@ -1,0 +1,10 @@
+import tkinter as tk
+from tkinter import messagebox
+from PIL import image, ImageTk
+
+# Sample clothing items (name, prices, image file)
+products = []
+    ("T-Shirt", 35.00, "tshirt.jpg"),
+    ("Jeans", 60.00, "jeans.jpg"),
+    ("Jacket", 80.00,"jacket.jpg"),
+    ("Hats", 25.00, "hats.jpg"),
