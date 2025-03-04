@@ -8,3 +8,21 @@ products = []
     ("Jeans", 60.00, "jeans.jpg"),
     ("Jacket", 80.00,"jacket.jpg"),
     ("Hats", 25.00, "hats.jpg"),
+input cart = []
+def add_to_cart(product):
+    cart.append(product)
+    update_cart_display()
+def update_cart_display():
+    cart_listbox.delete(0, tk.END)
+    total_price = 0
+    for item in cart:
+        cart_listbox.insert(tk.END,f"{item[0]}
+        total_price += item[1]
+    total_label.config(text = f"Total: ${total_price}
+def checkout():
+    if not cart:
+      messagebox.showwarning("Cart Empty")
+      return
+   messagebox.showinfo("Checkout","Thank You")
+   cart.clear()
+   update_cart_display()
