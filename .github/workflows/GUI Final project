@@ -8,6 +8,7 @@ products = []
     ("Jeans", 60.00, "jeans.jpg"),
     ("Jacket", 80.00,"jacket.jpg"),
     ("Hats", 25.00, "hats.jpg"),
+
 input cart = []
 def add_to_cart(product):
     cart.append(product)
@@ -26,3 +27,48 @@ def checkout():
    messagebox.showinfo("Checkout","Thank You")
    cart.clear()
    update_cart_display()
+
+   #Create main window
+   root = tk.TK()
+   root.title("Online Clothing Store")
+   root.geometry9"600 x 500")
+
+   #Product display frame
+   frame_products = tk. Frame(root)
+frame_products.pack(pady=10)
+
+   #Load images and display products
+for idx, (name, price, img_file)
+img = image.open(img_file).resize((100,100))
+img = ImageTk.PhotoImage(img)
+
+frame = tk.Frame(frame_products)
+frame.grid(row=idx)
+
+label_img = tk.Label(frame,image=img)
+label_img.image =img
+label_img.pack()
+
+label_name = tk.Label(frame,text = name)
+label_name.pack()
+
+label_price = tk.Label(frame, text = f'${'price'})
+label_price.pack()
+
+btn_add = tk.Button(frame, text ='Add to cart')
+btn_add.pack()
+
+#Cart section
+frame_cart = tk.Frame(root)
+frame_cart.pack(pady=20)
+
+cart_label = tk.Label(frame_cart, text = "shopping cart")
+cart_label.pack()
+
+cart_listbox = tk.listbox(frame_cart, text='Total items in cart')
+total_label.pack()
+
+checkout_button = tk.Button(frame_cart, text='Checkout items')
+checkout_button.pack(pady=5)
+
+root.mainloop()
